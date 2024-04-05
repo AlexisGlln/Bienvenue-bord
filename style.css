@@ -1,0 +1,164 @@
+:root {
+    --primary-color: #A306B6;
+    --second-color: #D9D9D9;
+    --light-color: #FFF;
+
+    --primary-font: "Montserrat", sans-serif;
+    --second-font: "Source sans 3", sans-serif;
+
+    --primary-size: 8px;
+    --seconde-size: 12px;
+}
+
+/* Global settings */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--primary-font);
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+p,
+a {
+    font-family: var(--seconde-size);
+}
+
+/* NavBar */
+
+header {
+    background-color: var(--primary-color);
+    padding: var(--seconde-size);
+}
+
+header nav img {
+    height: 50px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: calc(var(--seconde-size) * 3);
+    color: var(--light-color);
+}
+
+/* Header section */
+
+
+.welcome-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 20vw;
+    padding: 24px 0;
+}
+
+.welcome-section h1 {
+    color: var(--light-color);
+    width: 8ch;
+}
+
+.welcome-section img {
+    height: 150px;
+    outline: 5px solid var(--light-color);
+    outline-offset: -5px;
+    border-radius: 50%;
+}
+
+/* Recent articles */
+
+.recent-articles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--seconde-size);
+    margin: 0 10vw;
+}
+
+.recent-articles h2 {
+    grid-column: 1 / span 3;
+}
+
+.recent-articles article {
+    background-color: var(--second-color);
+    border-radius: var(--seconde-size);
+    text-align: center;
+    padding: var(--seconde-size);
+}
+
+.recent-articles article img {
+    height: 150px;
+}
+
+.recent-articles article a {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: var(--seconde-size) calc(var(--seconde-size) * 2);
+    border-radius: var(--seconde-size);
+    text-decoration: none;
+    display: block;
+    width: 100px;
+    margin: auto;
+}
+
+/* About Section */
+
+.about {
+    margin: 60px 30vw;
+}
+
+/* Footer Section */
+
+footer {
+    background-color: var(--second-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* MOBILE PART */
+
+@media screen and (max-width: 992px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        justify-content: center;
+        padding: 0;
+    }
+
+    /* Welcome section */
+    .welcome-section {
+        flex-direction: column-reverse;
+    }
+
+    /* Recent articles */
+
+    .recent-articles article {
+        grid-column: 1 / span 3;
+    }
+
+    /* About */
+
+    .about {
+        margin: 0 6vw;
+    }
+}
